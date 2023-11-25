@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Full Contract</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+  .w3-bar-block .w3-bar-item {padding:20px}
+  
+  .imgg {
+     border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 250px;
+  }
+  
+  
+  /* Fixed sidenav, full height */
+  .sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Add an active class to the active dropdown button */
+  .active {
+    background-color: green;
+    color: white;
+  }
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+  
+  /* Some media queries for responsiveness */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
+  
+  </style>
+
+</head>
+<body>
+
+
+
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:10%;min-width:200px" id="mySidebar">
+
+  <div class="sidenav">
+    <a onclick="w3_close()" href="#about">About</a>
+    
+    <button class="dropdown-btn">Manage Property 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a onclick="w3_close()" href="#">View List of Property</a>
+      <a onclick="w3_close()" href="#">Add Property</a>
+      <a onclick="w3_close()" href="#">Update Property</a>
+      <a onclick="w3_close()" href="#">Delete Property</a>
+      <a onclick="w3_close()" href="#">Print Property</a>
+
+    </div>
+
+    <button class="dropdown-btn">Manage Full Contract 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a onclick="w3_close()" href="#">View List of Full Contract </a>
+      <a onclick="w3_close()" href="#">Add Full Contract </a>
+      <a onclick="w3_close()" href="#">Update Full Contract </a>
+      <a onclick="w3_close()" href="#">Delete Full Contract </a>
+      <a onclick="w3_close()" href="#">Print Full Contract </a>
+    </div>
+    <a onclick="w3_close()" href="#contact">Search</a>
+  </div>
+
+  
+
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;height: 100px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" >
+      <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()" >☰</div>
+      
+    </div>
+    <img class="w3-left w3-padding-16" src="public/views/ppc.png" alt="PCC Logo" width="150" height="100">
+    <div style="text-align: !important center; padding: 20px; " class="w3-right w3-padding-16">Sign Up</div>
+
+    <div style="text-align: !important center; padding: 20px " class="w3-right w3-padding-16">Login</div>
+    <div class="w3-center w3-padding-16" style="text-align: !important center;"><h1>BẤT ĐỘNG SẢN PPC</h1></div>
+  </div>
+</div>
+
+
+  
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px ;" >
+
+
+	<div class="w3-container w3-padding-32 w3-center"> 
+    	<h3>Add Full Contract</h3><br>
+  	</div>
+
+  	<div class="w3-container w3-padding-32" style="border: 1px solid #ddd;
+  border-radius: 4px;"> 
+    <div class="w3-container w3-padding-32 w3-center"> 
+        <h3 style="margin: auto;">Full Contract Form</h3><br>
+    </div>
+        <div class="w3-container w3-padding-32 " style="width: 500px; margin: auto;">
+            <form action="/submit" method="post">
+                <div style="margin: 10px;padding: 10px; display: flex; justify-content: space-between;" class="form-group">
+                    <label style="margin-right: 40px;">Customer Name</label>
+                    <input style="margin-right: 10px; flex: 1;" class="form-control" id="customerName" name="customerName" placeholder="Customer Name">
+                </div>
+                <div style="margin: 10px;padding: 10px;display: flex; justify-content: space-between;" class="form-group">
+                    <label style="margin-right: 60px;">Year of Birth</label>
+                    <input style="margin-right: 10px;flex: 1;" type="text" class="form-control-plaintext" id="yearOfBirth" name="yearOfBirth" placeholder="Year of Birth">
+                </div>
+                <div style="margin: 10px;padding: 10px;display: flex; justify-content: space-between;" class="form-group">
+                    <label style="margin-right: 120px;">SSN</label>
+                    <input style="margin-right: 10px;flex: 1;" class="form-control" name="ssn" id="ssn" placeholder="SSN">
+                </div>
+                <div style="margin: 10px;padding: 10px;display: flex; justify-content: space-between;" class="form-group">
+                    <label style="margin-right: 30px;">Customer Address</label>
+                    <input style="margin-right: 10px;flex: 1;" type="text" class="form-control-plaintext" id="customerAddress" name="customerAddress" placeholder="Customer Address">
+                </div>
+                <div style="margin: 10px;padding: 10px;display: flex; justify-content: space-between;" class="form-group">
+                    <label style="margin-right: 105px;">Mobile</label>
+                    <input style="margin-right: 10px;flex: 1;" class="form-control" placeholder="Mobile" id="mobile" name="mobile">
+                </div>
+                <div style="margin: 10px;padding: 10px;display: flex; justify-content: space-between;" class="form-group">
+                    <label style="margin-right: 75px;">Property ID</label>
+                    <input style="margin-right: 10px;flex: 1;" type="text" class="form-control-plaintext" placeholder="Property ID" id="propertyID" name="propertyID">
+                </div>
+                <div style="margin: 10px;padding: 10px;display: flex; justify-content: space-between;" class="form-group">
+                    <label style="margin-right: 40px;">Date Of Contract</label>
+                    <input style="margin-right: 10px;flex: 1;" class="form-control" placeholder="Date Of Contract"name="dateOfContract">
+                </div>
+                <div style="margin: 10px;padding: 10px;display: flex; justify-content: space-between;" class="form-group">
+                    <label style="margin-right: 115px;">Price</label>
+                    <input style="margin-right: 10px;flex: 1;" type="text" class="form-control-plaintext" placeholder="Price"name="price">
+                </div>
+                <div style="margin: 10px;padding: 10px;display: flex; justify-content: space-between;" class="form-group">
+                    <label style="margin-right: 100px;">Deposit</label>
+                    <input style="margin-right: 10px;flex: 1;" class="form-control" placeholder="Deposit"name="deposit">
+                </div>
+                <div style="margin: 10px;padding: 10px;display: flex; justify-content: space-between;" class="form-group">
+                    <label style="margin-right: 100px;">Remain</label>
+                    <input style="margin-right: 10px;flex: 1;" type="text" class="form-control-plaintext" placeholder="Remain"name="remain">
+                </div>
+                <div style="margin: 10px;padding: 10px;display: flex; justify-content: space-between;" class="form-group">
+                    <label style="margin-right: 105px;">Status :</label>
+                    <input style="margin-right: 10px;flex: 1;" class="form-control" placeholder="Status"name="status">
+                </div>
+
+                <div class="w3-container w3-padding-32 w3-center">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        
+
+        
+
+
+
+		
+
+		
+  	</div>
+
+  	</div>
+
+  <!-- First Photo Grid-->
+	 
+
+
+
+
+
+  <hr id="about">
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32 w3-center">  
+    <h3>About Us, The Property PPC </h3><br>
+    <img src="public/views/ppc.png" alt="Me" class="w3-image" style="display:block;margin:auto" width="300" height="300">
+    <div class="w3-padding-32">
+      <h4><b>Who delivering all goods with good prices</b></h4>
+      <h6><i>With Passion For Real, Good Goods , Good Property , Good Experiment</i></h6>
+      <p>lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    </div>
+  </div>
+  <hr>
+
+  
+
+  
+  
+  
+  
+  <!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32">
+    <div class="w3-third">
+      <h3>FOOTER</h3>
+      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <p>Copyright Team 2</p>
+    </div>
+  
+    
+
+    <div class="w3-third w3-serif">
+      <h3>POPULAR TAGS</h3>
+      <p>
+        <span class="w3-tag w3-black w3-margin-bottom">Property</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Nha Trang</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cao Lanh</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Can Tho</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Sai Gon</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">District 1</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ha Long</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">District 2</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">District 4</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Da Nang</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">District 2</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">District Binh Thanh </span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Da Lat</span>
+      </p>
+    </div>
+  </footer>
+
+<!-- End page content -->
+</div>
+
+<script>
+
+
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
